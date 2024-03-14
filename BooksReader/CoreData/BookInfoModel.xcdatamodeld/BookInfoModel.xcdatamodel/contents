@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="21H1015" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AuthorEntity" representedClassName=".Author" syncable="YES">
+        <attribute name="author" attributeType="String"/>
+    </entity>
+    <entity name="BookFullInfoModel" representedClassName=".BookInfoModel" syncable="YES">
+        <attribute name="annotation" optional="YES" attributeType="String"/>
+        <attribute name="favourite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="Transformable" customClassName="UIImage"/>
+        <attribute name="mark" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pages" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="textURL" optional="YES" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <relationship name="authors" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="AuthorEntity"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="TagEntity"/>
+    </entity>
+    <entity name="TagEntity" representedClassName=".Tag" syncable="YES">
+        <attribute name="tag" attributeType="String"/>
+    </entity>
+</model>
